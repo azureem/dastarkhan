@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        app:popUpToInclusive="true"
+        android:name="com.example.dastarkhan.presentation.screens.splash.SplashScreen"
+        android:label="SplashScreen"
+        tools:layout="@layout/screen_splash">
+        <action
+            android:id="@+id/action_splashScreen_to_showroomScreen"
+            app:destination="@id/showroomScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoScreen"
+        tools:layout="@layout/screen_info"
+        android:name="com.example.dastarkhan.presentation.screens.info.InfoScreen"
+        android:label="InfoScreen" />
+    <fragment
+        android:id="@+id/categoryScreen"
+        android:name="com.example.dastarkhan.presentation.screens.category.CategoryScreen"
+        android:label="CategoryScreen"
+        tools:layout="@layout/screen_category">
+        <action
+            android:id="@+id/action_categoryScreen_to_infoScreen"
+            app:destination="@id/infoScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutScreen"
+        tools:layout="@layout/screen_about"
+        android:name="com.example.dastarkhan.presentation.screens.about.AboutScreen"
+        android:label="AboutScreen" />
+    <fragment
+        android:id="@+id/showroomScreen"
+        tools:layout="@layout/screen_showroom"
+        android:name="com.example.dastarkhan.presentation.screens.show.ShowroomScreen"
+        android:label="ShowroomScreen" >
+        <action
+            android:id="@+id/action_showroomScreen_to_categoryScreen"
+            app:destination="@id/categoryScreen" />
+        <action
+            android:id="@+id/action_showroomScreen_to_textileScreen"
+            app:destination="@id/textileScreen" />
+        <action
+            android:id="@+id/action_showroomScreen_to_aboutScreen"
+            app:destination="@id/aboutScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/txtInfo"
+        tools:layout="@layout/screen_txtinfo"
+        android:name="com.example.dastarkhan.presentation.screens.txtInfo.TxtInfo"
+        android:label="TxtInfo" />
+    <fragment
+        android:id="@+id/textileScreen"
+        tools:layout="@layout/screen_category_txt"
+        android:name="com.example.dastarkhan.presentation.screens.textile.TextileScreen"
+        android:label="TextileScreen" >
+        <action
+            android:id="@+id/action_textileScreen_to_txtInfo"
+            app:destination="@id/txtInfo" />
+    </fragment>
+</navigation>

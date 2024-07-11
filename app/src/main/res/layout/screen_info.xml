@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/special"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/tab"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@drawable/bg_tab"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/go_back"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/white" />
+
+        <TextView
+            android:id="@+id/food_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:fontFamily="@font/arab"
+            android:text="Food"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/go_back"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.8" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tab">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:id="@+id/imageHolder"
+                android:layout_width="match_parent"
+                android:layout_height="230dp"
+                android:layout_margin="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="@+id/imageHolder"
+                app:layout_constraintEnd_toEndOf="@id/imageHolder"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/imageHolder"
+                app:layout_constraintTop_toTopOf="@id/imageHolder"
+                app:layout_constraintVertical_bias="0.0">
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyleLarge"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:layout_gravity="center" />
+
+
+            </FrameLayout>
+
+
+            <View
+                android:id="@+id/line"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginHorizontal="32dp"
+                android:background="#641B0D"
+                android:layout_marginTop="24dp"
+                android:justificationMode="inter_word"
+                app:layout_constraintStart_toStartOf="@id/imageHolder"
+                app:layout_constraintEnd_toEndOf="@id/imageHolder"
+                app:layout_constraintTop_toBottomOf="@id/imageHolder"/>
+
+            <TextView
+                android:id="@+id/history_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Evolution of Food"
+                android:textColor="#641B0D"
+               android:fontFamily="@font/arab"
+                android:textSize="24sp"
+                app:layout_constraintStart_toStartOf="@id/imageHolder"
+                app:layout_constraintTop_toBottomOf="@id/line" />
+
+            <TextView
+                android:id="@+id/history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:textSize="16dp"
+                android:text=""
+                android:justificationMode="inter_word"
+                app:layout_constraintEnd_toEndOf="@id/imageHolder"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@id/history_name"
+                app:layout_constraintTop_toBottomOf="@id/history_name" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contr_ingredHolder"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintEnd_toEndOf="@id/imageHolder"
+                app:layout_constraintStart_toStartOf="@id/history"
+                app:layout_constraintTop_toBottomOf="@id/history">
+
+                <TextView
+                    android:id="@+id/title_ingredient"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ingredients "
+                    android:textSize="24sp"
+                    android:textColor="#641B0D"
+                    android:fontFamily="@font/arab"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/required"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="required: "
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/title_ingredient"
+                    app:layout_constraintTop_toBottomOf="@id/title_ingredient" />
+
+                <TextView
+                    android:id="@+id/ingredients"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:justificationMode="inter_word"
+                    android:text="csdcsdccewfed v0evk w0ef 203if qq0 2i3d q0w d34ij4o urojy hfit skjt uwi kkr sjjt isw friiii weifnnif ieii eiiicwiox    eiierooir rif  tuiitshio worjj aejow erow ooc eo jwfoej fe fwjejwebrjwebrjwerw eiriehr wierh ehr iwer weihhhr wieri wooooooower r "
+                    android:textSize="16dp"
+                    app:layout_constraintStart_toStartOf="@id/required"
+                    app:layout_constraintTop_toBottomOf="@id/required" />
+
+                <TextView
+                    android:id="@+id/optional_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="optional:"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/ingredients"
+                    app:layout_constraintTop_toBottomOf="@id/ingredients" />
+
+                <TextView
+                    android:id="@+id/extra"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="hhtiooo krrk shhy ii gerhwier wierio woer roiweir wer ipwerwper iwperiwe riwerwper wpri epri er fieroevboriieoiur fepoifweoipwie vjerof  ewjro"
+                    android:textSize="16dp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintStart_toStartOf="@id/optional_title"
+                    app:layout_constraintTop_toBottomOf="@id/optional_title" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constr_preparHolder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                app:layout_constraintStart_toStartOf="@id/contr_ingredHolder"
+                app:layout_constraintTop_toBottomOf="@id/contr_ingredHolder">
+
+
+                <TextView
+                    android:id="@+id/title_prepar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Preparation"
+                    android:textSize="24dp"
+                    android:textColor="#641B0D"
+                    android:fontFamily="@font/arab"
+
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/preparation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="sdhskdfhsdjkfhsdjfhsdkj skdfhsfs df sfhsjdfh sdjhfs jdfhsjhfsj dfhjdfhsjkdfhjk sdhfskjdhfkjsdhfkjsdhfkjsdhfjsdhfdhfsjdhfsjdf sdfhk"
+                    android:textSize="16dp"
+                    android:justificationMode="inter_word"
+                    app:layout_constraintStart_toStartOf="@id/title_prepar"
+                    app:layout_constraintTop_toBottomOf="@id/title_prepar" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/constr_preparHolder" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
